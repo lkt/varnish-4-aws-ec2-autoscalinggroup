@@ -5,7 +5,7 @@
       "Type": "AWS::AutoScaling::AutoScalingGroup",
       "Properties": {
         "AvailabilityZones": [
-          "eu-west-1b"
+          "eu-central-1a"
         ],
         "Cooldown": "300",
         "DesiredCapacity": "2",
@@ -42,7 +42,7 @@
       "Type": "AWS::AutoScaling::AutoScalingGroup",
       "Properties": {
         "AvailabilityZones": [
-          "eu-west-1b"
+          "eu-central-1a"
         ],
         "Cooldown": "300",
         "DesiredCapacity": "1",
@@ -122,7 +122,7 @@
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "GroupDescription": "SSH & HTTP open",
-        "VpcId": "vpc-9bd723ff",
+        "VpcId": "vpc-f3660d9a",
         "SecurityGroupIngress": [
           {
             "IpProtocol": "tcp",
