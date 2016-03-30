@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Resources": {
-    "ASG-Apache": {
+    "AsgApache": {
       "Type": "AWS::AutoScaling::AutoScalingGroup",
       "Properties": {
         "AvailabilityZones": [
@@ -38,7 +38,7 @@
         ]
       }
     },
-    "ASG-Varnish": {
+    "AsgVarnish": {
       "Type": "AWS::AutoScaling::AutoScalingGroup",
       "Properties": {
         "AvailabilityZones": [
@@ -78,7 +78,7 @@
     "lcApacheLayer": {
       "Type": "AWS::AutoScaling::LaunchConfiguration",
       "Properties": {
-        "ImageId": "ami-47178030",
+        "ImageId": "ami-55625665",
         "InstanceType": "t2.micro",
         "KeyName": "home",
         "SecurityGroups": [
@@ -99,7 +99,7 @@
     "lcVarnishLayer": {
       "Type": "AWS::AutoScaling::LaunchConfiguration",
       "Properties": {
-        "ImageId": "ami-9d23aeea",
+        "ImageId": "ami-55625665",
         "InstanceType": "t2.micro",
         "KeyName": "home",
         "IamInstanceProfile": "aws-cli",
@@ -122,7 +122,7 @@
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "GroupDescription": "SSH & HTTP open",
-        "VpcId": "vpc-be75a8db",
+        "VpcId": "vpc-9bd723ff",
         "SecurityGroupIngress": [
           {
             "IpProtocol": "tcp",
@@ -152,7 +152,7 @@
         "Cooldown": "300",
         "ScalingAdjustment": "-1",
         "AutoScalingGroupName": {
-          "Ref": "asgASGApache"
+          "Ref": "AsgApache"
         }
       }
     },
@@ -163,7 +163,7 @@
         "Cooldown": "300",
         "ScalingAdjustment": "1",
         "AutoScalingGroupName": {
-          "Ref": "asgASGApache"
+          "Ref": "AsgApache"
         }
       }
     },
